@@ -1,1 +1,11 @@
 # DataBiasToxicity
+
+With this API I am taking the comments and comparing what scores it will return when they are all lowercase and when the comments are all uppercase. I believe that the API will return higher toxicity scores for the comments that are in all uppercase. I have set the threshold to .1. Any score above that is considered toxic and any score below is not. 
+
+When data has a small sample size, outliers have more power over the data distribution and can cause it to skew. My data was small with 33 comments, if there was an outlier in the data, it would have cause the data to move away from the true mean. Adding more data will mitigate the effect of that outlier. 
+
+I think a major bias is self-perception. Everyone has individual interpretations of what it means for a comment to be toxic. For example, telling the truth in an unfiltered way might be seen by some as brave or by other as rude and toxic. Adding the fact that with analyzing data, the API has to assume attributes like tone, facial expressions, and context in a way when they examine the comments. Depending on the viewpoints of the engineers, how they choose to assume those attributes, is all determinists of how the comment is viewed as toxic. 
+
+After obtaining the toxicity scores of the comments in lowercase and uppercase and then finding the mean if those scores, the lowercase comments had a score of 0.19917621093939392, while the uppercase comments had a score of 0.26987929827272733. The mean is higher for the uppercase comments, indicating that the API is biased against uppercase comments and tends to view them as more toxic. More comments crossed the .1 threshold of being toxic when the comments were all in uppercase. In the graph where both lowercase and uppercase scores were tested, you can see the difference in scores and how the uppercase comments mostly had higher scores. 
+
+Overall, it is hard to convey emotion through text. The use of capitalization, signs, and emojis help us express how we really feel. Texting or writing in all uppercase can convey typically two emotions: excitement or anger. Because this API is meant to find toxicity, human bias when coding is more likely to interpret all uppercase in anger rather than excitement.
